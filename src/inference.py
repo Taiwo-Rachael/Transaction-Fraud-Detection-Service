@@ -2,11 +2,15 @@ import numpy as np
 import joblib
 import pandas as pd
 from datetime import datetime
+from pathlib import Path
 import os
-# Load encoder and scaler 
 
-encoder = joblib.load(r'C:\Users\Fasanya Taiwo\Documents\Data Science and Analytics\VS CODE\Fraud-Detection-Model\src\encoder.joblib')
-scaler = joblib.load(r'C:\Users\Fasanya Taiwo\Documents\Data Science and Analytics\VS CODE\Fraud-Detection-Model\src\scaler.joblib')
+# Defining the base directory
+BASE_DIR = Path(__file__).parent
+
+# Load encoder and scaler 
+encoder = joblib.load(BASE_DIR /"encoder.joblib")
+scaler = joblib.load(BASE_DIR /"scaler.joblib")
 
 # List of columns in the order the model expects
 MODEL_FEATURES = [
