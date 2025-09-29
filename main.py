@@ -5,8 +5,7 @@ from src.base_model import TransactionInput
 from src.inference import preprocess_input
 import os
 
-model = joblib.load(r'C:\Users\Fasanya Taiwo\Documents\Data Science and Analytics\VS CODE\Fraud-Detection-Model\model\fraud_detection_model.joblib')
-
+model = joblib.load('model/fraud_detection_model.joblib')
 app = FastAPI() 
 
 @app.post("/fraud-detection-model")
