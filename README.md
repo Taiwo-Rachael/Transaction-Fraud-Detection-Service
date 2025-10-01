@@ -10,23 +10,22 @@ FastAPI service built on a robust XGBoost model to classify financial transactio
 ## Project Structure
 ```bash
 Transaction-Fraud-Detection-Service/   
-├── model/                          # Stored ML model artifacts  
-│   ├── fraud_detection_model.joblib # Trained fraud detection model  
-│   ├── encoder.joblib               # Label encoder  
-│   └── scaler.joblib                # Feature scaler  
+├── model/                         
+│   └── fraud_detection_model.joblib    # Trained fraud detection model  
 │
-├── src/                            # Source code files  
-│   ├── utils/                       # Utility modules  
-│   │   └── inference.py             # Inference logic for model predictions  
-│   ├── base_model.py                # Pydantic input schema definitions  
-│   └── Fraud_Detection_Model.ipynb  # Model training / experimentation notebook  
+├── src/                                # Source code files   
+│   ├── base_model.py                   # Pydantic input schema definitions
+│   ├── encoder.joblib                  # OneHotEncoder
+│   ├── Fraud_Detection_Model.ipynb     # Model training notebook
+│   ├── inference.py                    # custom preprocessing function  
+│   └── scaler.joblib                   # Feature scaler 
 │
-├── .dockerignore                   # Docker ignore file  
-├── .gitignore                      # Git ignore file  
-├── Dockerfile                      # Docker build instructions  
-├── main.py                         # FastAPI entrypoint  
-├── README.md                       # Project documentation  
-└── requirements.txt                 # Python dependencies  
+├── .dockerignore                       # Docker ignore file  
+├── .gitignore                          # Git ignore file  
+├── Dockerfile                          # Docker build instructions  
+├── main.py                             # FastAPI entrypoint  
+├── README.md                           # Project documentation  
+└── requirements.txt                    # Python dependencies  
 
 ```
 
@@ -77,4 +76,5 @@ In your project root, create a .env file and add the following variables:
 ```bash
 NIP_USER
 NIP_PW
+
 
