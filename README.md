@@ -5,7 +5,6 @@ FastAPI service built on a robust XGBoost model to classify financial transactio
 1. [Project Structure](#project-structure)
 2. [Local Development](#local-development)
 3. [Docker Setup](#docker-setup)
-4. [Configure Environment Variables](#configure-environment-variables)
 
 ## Project Structure
 ```bash
@@ -32,10 +31,10 @@ Transaction-Fraud-Detection-Service/
 ## Local Development
 ### 1. Clone the Repository:  
 ```bash
-git clone https://github.com/Taiwo-Rachael/Transaction-Reports-Download-Bots.git
-cd Transaction-Reports-Download-Bots
+git clone https://github.com/Taiwo-Rachael/Transaction-Fraud-Detection-Service.git
+cd Transaction-Fraud-Detection-Service
 ```
- 
+
 ### 2. Create and Activate a Virtual Environment:
 ```bash
 python3 -m venv .venv
@@ -56,26 +55,13 @@ The API will be available at http://127.0.0.1:8000.
 ## Docker Setup
 ### Build the Docker Image
 ```bash
-docker build -t taiworachel/reports-downloader-bots .
+docker build -t fraud-detection-model .
 ```
 ### Run a Container
 ```bash
-docker run --rm \
-  -p 8000:8000 \
-  --env-file .env \
-  --env DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0 \
-  -v ~/Downloads:/root/Downloads \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  taiworachel/reports-downloader-bots
+docker run -p 8000:8000 fraud-detection-model
 ```
 The application is now available at http://localhost:8000
-
-## Configure Environment Variables
-
-In your project root, create a .env file and add the following variables:
-```bash
-NIP_USER
-NIP_PW
 
 
 
